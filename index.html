@@ -6,6 +6,9 @@
 <meta name="description" content="Parth Bhatt — Lead Product Analyst at Media.net. IIT Kanpur graduate specializing in product strategy, experimentation, and data-informed decision-making.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F4B45'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' fill='%23F7F5F1' text-anchor='middle'%3EPB%3C/text%3E%3C/svg%3E">
 <title>Parth Bhatt — Lead Product Analyst</title>
+
+<!-- Analytics: replace YOUR-CODE below with your GoatCounter site code (see instructions from Claude) -->
+<script data-goatcounter="https://YOUR-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -68,8 +71,8 @@
   /* ---------- Hero ---------- */
   .hero{ padding:64px 0 68px; }
   .hero-grid{
-    display:grid; grid-template-columns: 1.6fr 0.5fr;
-    gap:48px; align-items:center;
+    display:grid; grid-template-columns: 1fr 260px;
+    gap:40px; align-items:center;
   }
   .hero h1{
     font-size:clamp(2.4rem, 5.2vw, 4rem);
@@ -81,7 +84,7 @@
   }
 
   .hero-photo{
-    aspect-ratio:1/1; max-width:200px; margin:0 auto; border-radius:14px; overflow:hidden;
+    aspect-ratio:242/346; width:100%; border-radius:14px; overflow:hidden;
     background:transparent; border:1.5px dashed var(--line);
     display:flex; align-items:center; justify-content:center;
   }
@@ -221,7 +224,7 @@
   }
   @media (max-width: 680px){
     .hero-grid{ grid-template-columns:1fr; gap:32px; }
-    .hero-photo{ max-width:150px; margin:0 auto; order:-1; }
+    .hero-photo{ width:150px; margin:0 auto; order:-1; }
   }
   @media (max-width: 640px){
     .menu-btn{
@@ -261,6 +264,18 @@
 </style>
 </head>
 <body>
+<script>
+  function tryNextImage(img, attempts){
+    const i = (parseInt(img.dataset.attempt) || 0) + 1;
+    if (i < attempts.length){
+      img.dataset.attempt = i;
+      img.src = attempts[i];
+    } else {
+      img.style.display = 'none';
+      img.nextElementSibling.style.display = 'flex';
+    }
+  }
+</script>
 
 <header>
   <div class="wrap nav-row">
@@ -271,7 +286,7 @@
       <a href="#projects">Projects</a>
       <a href="#ventures">Ventures</a>
       <a href="#skills">Skills</a>
-      <a href="https://drive.google.com/file/d/10nrY9T3c6U0ADiFufdV6V3UJmdwupAZm/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
@@ -285,7 +300,7 @@
       <p class="hero-sub">I'm a Lead Product Analyst at Media.net, where I turn experiments and data into product decisions. Trying a bunch of things, including figuring out life :)</p>
     </div>
     <div class="hero-photo">
-      <img src="photo.jpg" alt="Parth Bhatt" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <img src="photo.jpg" data-attempt="0" alt="Parth Bhatt" onerror="tryNextImage(this, ['photo.jpg','photo.jpeg','photo.png','photo.JPG','photo.JPEG'])">
       <div class="initials" style="display:none;">PB</div>
     </div>
   </div>
@@ -299,7 +314,7 @@
     </div>
     <div class="fact-card">
       <div class="fact-row"><span class="fact-key">Hails from</span><span class="fact-val">Ahmedabad, Gujarat</span></div>
-      <div class="fact-row"><span class="fact-key">Work ex</span><span class="fact-val">2 years</span></div>
+      <div class="fact-row"><span class="fact-key">Work Experience</span><span class="fact-val">2 years</span></div>
       <div class="fact-row"><span class="fact-key">Open to</span><span class="fact-val">Product, Strategy &amp; Generalist roles</span></div>
     </div>
   </div>
@@ -313,7 +328,7 @@
 
       <div class="exp-row">
         <div class="exp-logo">
-          <img src="logos/medianet.png" alt="Media.net" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="logos/medianet.png" data-attempt="0" alt="Media.net" onerror="tryNextImage(this, ['logos/medianet.png','logos/medianet.jpg','logos/medianet.jpeg','logos/medianet.svg'])">
           <span class="logo-fallback" style="display:none;">LOGO</span>
         </div>
         <div class="exp-content">
@@ -331,7 +346,7 @@
 
       <div class="exp-row">
         <div class="exp-logo">
-          <img src="logos/datahash.png" alt="DataHash" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="logos/datahash.png" data-attempt="0" alt="DataHash" onerror="tryNextImage(this, ['logos/datahash.png','logos/datahash.jpg','logos/datahash.jpeg','logos/datahash.svg'])">
           <span class="logo-fallback" style="display:none;">LOGO</span>
         </div>
         <div class="exp-content">
@@ -345,7 +360,7 @@
 
       <div class="exp-row">
         <div class="exp-logo">
-          <img src="logos/centaari.png" alt="Centaari.AI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="logos/centaari.png" data-attempt="0" alt="Centaari.AI" onerror="tryNextImage(this, ['logos/centaari.png','logos/centaari.jpg','logos/centaari.jpeg','logos/centaari.svg'])">
           <span class="logo-fallback" style="display:none;">LOGO</span>
         </div>
         <div class="exp-content">
@@ -359,7 +374,7 @@
 
       <div class="exp-row">
         <div class="exp-logo">
-          <img src="logos/askfundu.png" alt="askFundu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="logos/askfundu.png" data-attempt="0" alt="askFundu" onerror="tryNextImage(this, ['logos/askfundu.png','logos/askfundu.jpg','logos/askfundu.jpeg','logos/askfundu.svg'])">
           <span class="logo-fallback" style="display:none;">LOGO</span>
         </div>
         <div class="exp-content">
@@ -405,7 +420,7 @@
     <div class="sec-label sec-label-standalone">Ventures</div>
     <div class="venture">
       <div class="exp-logo">
-        <img src="logos/gridify.png" alt="Gridify Ventures" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="logos/gridify.png" data-attempt="0" alt="Gridify Ventures" onerror="tryNextImage(this, ['logos/gridify.png','logos/gridify.jpg','logos/gridify.jpeg','logos/gridify.svg'])">
         <span class="logo-fallback" style="display:none;">LOGO</span>
       </div>
       <div class="venture-body">
